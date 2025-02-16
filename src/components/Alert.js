@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react'
 
 export default function Alert(props) {
@@ -14,7 +13,6 @@ export default function Alert(props) {
     </div>
   )
 }
-=======
 import React from 'react'
 
 export default function Alert(props) {
@@ -30,4 +28,3 @@ export default function Alert(props) {
     </div>
   )
 }
->>>>>>> a83e908 (Initial commit)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import PropTypes from "prop-types";
 // import { Link } from 'react-router-dom';
@@ -84,7 +83,6 @@ Navbar.propTypes = {
 //     title: "Set title here",
 //     aboutText: "About Text Here"
 // };
-=======
 import React from "react";
 import PropTypes from "prop-types";
 // import { Link } from 'react-router-dom';
@@ -170,4 +168,3 @@ Navbar.propTypes = {
 //     title: "Set title here",
 //     aboutText: "About Text Here"
 // };
->>>>>>> a83e908 (Initial commit)
