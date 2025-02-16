@@ -2,10 +2,17 @@ import "./App.css"; //can be changed
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
+<<<<<<< HEAD
 // import About from "./components/About";
 import React, { useState } from "react";
 
 // import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // React Router v6
+=======
+import About from "./components/About";
+import React, { useState } from "react";
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // React Router v6
+>>>>>>> a83e908 (Initial commit)
 
 
 function App() {
@@ -36,6 +43,7 @@ function App() {
     }, 1500)
   }
   return (
+<<<<<<< HEAD
     // <Router>
     //   <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} aboutText="About"/>
     //   <Alert alert={alert} />
@@ -54,6 +62,18 @@ function App() {
     <TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />
     </div>
     </>
+=======
+    <Router>
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} aboutText="About"/>
+      <Alert alert={alert} />
+      <div className="container my-3">
+        <Routes>
+          <Route exact path="/about" element={<About />} />
+          <Route eaxct path="/" element={<TextForm showAlert={showAlert} heading="Enter the text to analyze below" mode={mode} />} />
+        </Routes>
+      </div>
+    </Router>
+>>>>>>> a83e908 (Initial commit)
   );
 }
 
