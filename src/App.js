@@ -18,7 +18,7 @@ function App() {
     setTimeout(() => {
       setAlert(null);
     }, 1500);
-  }
+  };
 
   const toggleMode = () => {
     if (mode === 'light') {
@@ -30,7 +30,7 @@ function App() {
       document.body.style.backgroundColor = 'white';
       showAlert("Light mode is enabled", "success");
     }
-  }
+  };
 
   return (
     <Router>
@@ -38,10 +38,10 @@ function App() {
       <Alert alert={alert} />
       <div className="container my-3">
         <Routes>
-          {/* Route for Home */}
+          {/* Route for Home (Default Route) */}
           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode} />} />
           
-          {/* Route for About */}
+          {/* Route for About Page */}
           <Route exact path="/about" element={<About mode={mode} />} />
         </Routes>
       </div>
