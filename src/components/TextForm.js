@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+
   const handleUpClick = () => {
     // console.log("Uppercase eas clicked "+text)
     let newText = text.toUpperCase();
@@ -68,38 +69,38 @@ export default function TextForm(props) {
             className="form-control"
             value={text}
             onChange={handleOnChange} //taky type krrsken
-            style={{backgroundColor:props.mode==='dark'?'grey':'white',color:props.mode==='dark'?'white':'black'}}
+            style={{backgroundColor:props.mode==='dark'?'#13466e':'white',color:props.mode==='dark'?'white':'black'}}
             id="myBox"
             rows="8"
           ></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUpClick}>
+        <button disabled={text.length ===0} className="btn btn-primary mx-2" onClick={handleUpClick}>
           Convert to UpperCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handlelwClick}>
+        <button disabled={text.length ===0} className="btn btn-primary mx-2 my-2" onClick={handlelwClick}>
           Convert to LowerCase
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCapClick}>
+        <button disabled={text.length ===0} className="btn btn-primary mx-2 my-2" onClick={handleCapClick}>
           Convert to Capital case
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleInverseClick}>
+        <button disabled={text.length ===0} className="btn btn-primary mx-2 my-2" onClick={handleInverseClick}>
           Convert to Inverse case
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleDownloadClick}>
+        <button disabled={text.length ===0} className="btn btn-primary mx-2 my-2" onClick={handleDownloadClick}>
           Download Text
         </button>
-        <button className="btn btn-primary mx-2" onClick={handleCtClick}>
+        <button disabled={text.length ===0} className="btn btn-primary mx-2 my-2" onClick={handleCtClick}>
           Clear Text
         </button>
       </div>
       <div className="container my-3" style={{color:props.mode==='dark'?'white':'black'}}>
         <h2>Your Text Summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.split("").filter((char) => char !== " ").length} characters          characters
         </p>
-        <p>{0.008 * text.split(" ").length} Minutes read</p>
+        <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read</p>
         <h2>Preview</h2>
-        <p>{text.length>0?text:"Enter something in the text box above to preview it here"}</p>
+        <p>{text.length>0?text:"Nothing to Preview!"}</p>
       </div>
     </>
   );

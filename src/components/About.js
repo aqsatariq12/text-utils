@@ -1,27 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white"
-    });
-  const [btnText, setBtnText] = useState("Enabel dark mode")
-  const toggleStyle = ()=>{
-    if(myStyle.color === "black"){
-        setMyStyle({
-            color: "white",
-            backgroundColor: "black",
-            border: '1px solid white'
-        })
-        setBtnText("Enabel light mode")
-    }
-    else{
-        setMyStyle({
-            color: "black",
-            backgroundColor: "white",
-        })
-        setBtnText("Enabel Dark mode")
-    }
+export default function About(props) {
+  let myStyle ={
+    color: props.mode ==='dark'? 'white':'#042743',
+    backgroundColor: props.mode ==='dark'? '#042743':'white',
   }
   return (
     <div className="container" style={myStyle}>
@@ -38,7 +20,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              <strong> Analyze Your Text</strong>
             </button>
           </h2>
           <div
@@ -47,14 +29,15 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              Welcome to TextUtils – your one-stop solution for analyzing and
+              enhancing your text! Whether you're writing an essay, crafting a
+              blog post, or preparing a professional document, TextUtils helps
+              you optimize your content effortlessly. Count words and
+              characters, eliminate extra spaces, and get quick insights into
+              your writing. Our intuitive interface makes it easy to organize
+              and refine your text, ensuring clear and concise communication.
+              Start analyzing your text today and take your writing to the next
+              level!
             </div>
           </div>
         </div>
@@ -69,7 +52,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              <strong>Free to Use</strong>
             </button>
           </h2>
           <div
@@ -78,14 +61,13 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              TextUtils is completely free to use, with no hidden costs or
+              sign-ups required. Whether you're a student, blogger, or
+              professional, our tool is designed to simplify your writing
+              process without any fees. Enjoy unlimited access to all features,
+              including word and character counting, text formatting, and more.
+              Enhance your writing experience with ease – anytime, anywhere, for
+              free!
             </div>
           </div>
         </div>
@@ -100,7 +82,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              <strong>Browser Compatible</strong> 
             </button>
           </h2>
           <div
@@ -109,21 +91,20 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              TextUtils is designed to work seamlessly across all modern web
+              browsers. Whether you're using Chrome, Firefox, Safari, or Edge,
+              our tool ensures a smooth and consistent experience. No downloads
+              or installations required – just open your favorite browser and
+              start analyzing your text instantly. Enjoy full functionality and
+              responsive design on any device, making TextUtils accessible
+              wherever you go!
             </div>
           </div>
         </div>
       </div>
-      <div className="container my-3">
+      {/* <div className="container my-3">
         <button className="btn btn-primary" onClick={toggleStyle}>{btnText}</button>
-      </div>
+      </div> */}
     </div>
   );
 }
