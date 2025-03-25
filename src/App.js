@@ -6,6 +6,7 @@ import Alert from "./components/Alert";
 import About from "./components/About";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+
 function App() {
   const [mode, setMode] = useState('light'); // Light or Dark mode
   const [alert, setAlert] = useState(null);
@@ -33,7 +34,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/text-utils">
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} aboutText="About" />
       <Alert alert={alert} />
       <div className="container my-3">
@@ -48,5 +49,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;
